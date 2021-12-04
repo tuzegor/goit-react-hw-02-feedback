@@ -8,19 +8,9 @@ class App extends Component {
     bad: 0,
   };
 
-  countGoodFeedback = () => {
+  countFeedback = name => {
     this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
-  countNeutralFeedback = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-  countBadFeedback = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
+      [name]: prevState[name] + 1,
     }));
   };
 
@@ -44,21 +34,30 @@ class App extends Component {
           <button
             className="goodBtn"
             type="button"
-            onClick={this.countGoodFeedback}
+            name="good"
+            onClick={e => {
+              this.countFeedback(e.target.name);
+            }}
           >
             Good
           </button>
           <button
             className="neutralBtn"
             type="button"
-            onClick={this.countNeutralFeedback}
+            name="neutral"
+            onClick={e => {
+              this.countFeedback(e.target.name);
+            }}
           >
             Neutral
           </button>
           <button
             className="badBtn"
             type="button"
-            onClick={this.countBadFeedback}
+            name="bad"
+            onClick={e => {
+              this.countFeedback(e.target.name);
+            }}
           >
             Bad
           </button>
