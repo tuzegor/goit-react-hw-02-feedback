@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
+
 class Statistics extends Component {
   render() {
     const { good, neutral, bad, total, positivePercentage } = this.props;
+
     return (
       <div className={styles.statistics}>
         <p>Good: {good}</p>
@@ -15,6 +17,7 @@ class Statistics extends Component {
     );
   }
 }
+
 Statistics.propTypes = {
   good: PropTypes.number,
   neutral: PropTypes.number,
@@ -22,4 +25,5 @@ Statistics.propTypes = {
   total: PropTypes.number,
   positivePercentage: PropTypes.number,
 };
+
 export default Statistics;

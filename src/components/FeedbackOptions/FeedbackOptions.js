@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 class FeedbackOptions extends Component {
   render() {
     const { onLeaveFeedback } = this.props;
+
     return (
       <div className={styles.options}>
         <button
