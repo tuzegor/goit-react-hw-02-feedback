@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styles from './FeedbackOptions.module.css';
+import PropTypes from 'prop-types';
 
 class FeedbackOptions extends Component {
   render() {
     const { onLeaveFeedback } = this.props;
     return (
       <div className={styles.options}>
-        <h2 className={styles.title}>Please leave feedback</h2>
         <button
           className={styles.goodBtn}
           type="button"
@@ -41,5 +41,9 @@ class FeedbackOptions extends Component {
     );
   }
 }
+
+FeedbackOptions.propTypes = {
+  onLeaveFeedback: PropTypes.func,
+};
 
 export default FeedbackOptions;
